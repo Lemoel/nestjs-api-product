@@ -32,4 +32,4 @@ Para saber se foi instalado, veja a versão do seu nest com o comando `$ nest -v
 Agora é só fazer o clone do projeto
 
 Subir o servidor em modo dev para que seja feito reload automático das alterações do código
-* `npm run start:dev`
+* `$ npm run start:dev`

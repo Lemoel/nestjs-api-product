@@ -16,9 +16,9 @@ Você deve ter instalado na sua máquina `nodeJS`
 
 # Versões utilizadas neste projeto
 
-nodejs: 14.15.4
-npm:    6.14.10
-nest:   7.5.4
+* nodejs: 14.15.4
+* npm:    6.14.10
+* nest:   7.5.4
 
 com os comandos `$ node -v` e `$ npm -v` você pode ver as versões instaladas na sua máquina.
 

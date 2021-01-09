@@ -30,3 +30,6 @@ Instalar a ferramente do nestJS de forma global
 Para saber se foi instalado, veja a versão do seu nest com o comando `$ nest -v`, neste projeto utilizei a 7.5.4
 
 Agora é só fazer o clone do projeto
+
+Subir o servidor em modo dev para que seja feito reload altomático das alterações do código
+`npm run start:dev`

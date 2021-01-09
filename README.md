@@ -41,3 +41,6 @@ Subir o servidor em modo dev para que seja feito reload automático das alteraç
 Foi utilizado a versão 5 por questões de compatibilidade
 
 `npm install --save @nestjs/sequelize sequelize@5 sequelize-typescript mysql2`
+
+Possibilita que o sequelize utilize typescript - dependência apenas de desenvolvimento
+`npm install --save-dev @types/sequelize`

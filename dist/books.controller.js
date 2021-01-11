@@ -12,67 +12,67 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProdutosController = void 0;
+exports.BooksController = void 0;
 const common_1 = require("@nestjs/common");
-const product_model_1 = require("./product.model");
-const produtcs_service_1 = require("./produtcs.service");
-let ProdutosController = class ProdutosController {
-    constructor(productsService) {
-        this.productsService = productsService;
+const book_model_1 = require("./book.model");
+const books_service_1 = require("./books.service");
+let BooksController = class BooksController {
+    constructor(booksService) {
+        this.booksService = booksService;
     }
-    findAll() {
-        return this.productsService.findall();
+    async findAll() {
+        return this.booksService.findall();
     }
-    findById(params) {
-        return this.productsService.findById(params.id);
+    async findByPk(params) {
+        return this.booksService.findByPk(params.id);
     }
-    create(product) {
-        this.productsService.create(product);
+    async create(book) {
+        this.booksService.create(book);
     }
-    update(product) {
-        return this.productsService.update(product);
+    async update(book) {
+        return this.booksService.update(book);
     }
-    deleteById(params) {
-        this.productsService.deleteById(params.id);
+    async deleteById(params) {
+        this.booksService.deleteById(params.id);
     }
 };
 __decorate([
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Array)
-], ProdutosController.prototype, "findAll", null);
+    __metadata("design:returntype", Promise)
+], BooksController.prototype, "findAll", null);
 __decorate([
     common_1.Get(':id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", product_model_1.Product)
-], ProdutosController.prototype, "findById", null);
+    __metadata("design:returntype", Promise)
+], BooksController.prototype, "findByPk", null);
 __decorate([
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [product_model_1.Product]),
-    __metadata("design:returntype", void 0)
-], ProdutosController.prototype, "create", null);
+    __metadata("design:paramtypes", [book_model_1.Book]),
+    __metadata("design:returntype", Promise)
+], BooksController.prototype, "create", null);
 __decorate([
     common_1.Put(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [product_model_1.Product]),
-    __metadata("design:returntype", product_model_1.Product)
-], ProdutosController.prototype, "update", null);
+    __metadata("design:paramtypes", [book_model_1.Book]),
+    __metadata("design:returntype", Promise)
+], BooksController.prototype, "update", null);
 __decorate([
     common_1.Delete(':id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], ProdutosController.prototype, "deleteById", null);
-ProdutosController = __decorate([
-    common_1.Controller('products'),
-    __metadata("design:paramtypes", [produtcs_service_1.ProductsService])
-], ProdutosController);
-exports.ProdutosController = ProdutosController;
-//# sourceMappingURL=products.controller.js.map
+    __metadata("design:returntype", Promise)
+], BooksController.prototype, "deleteById", null);
+BooksController = __decorate([
+    common_1.Controller('books'),
+    __metadata("design:paramtypes", [books_service_1.BooksService])
+], BooksController);
+exports.BooksController = BooksController;
+//# sourceMappingURL=books.controller.js.map

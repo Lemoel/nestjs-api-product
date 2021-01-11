@@ -10,14 +10,29 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const products_controller_1 = require("./products.controller");
+const books_controller_1 = require("./books.controller");
+const books_service_1 = require("./books.service");
+const sequelize_1 = require("@nestjs/sequelize");
+const book_model_1 = require("./book.model");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [],
-        controllers: [app_controller_1.AppController, products_controller_1.ProdutosController],
-        providers: [app_service_1.AppService],
+        imports: [
+            sequelize_1.SequelizeModule.forRoot({
+                dialect: 'mysql',
+                host: '172.17.0.2',
+                port: 3306,
+                username: 'root',
+                password: '',
+                database: 'book_store',
+                autoLoadModels: true,
+                synchronize: true,
+            }),
+            sequelize_1.SequelizeModule.forFeature([book_model_1.Book])
+        ],
+        controllers: [app_controller_1.AppController, books_controller_1.BooksController],
+        providers: [app_service_1.AppService, books_service_1.BooksService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

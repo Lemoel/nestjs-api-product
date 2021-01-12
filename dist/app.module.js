@@ -14,16 +14,18 @@ const books_controller_1 = require("./books.controller");
 const books_service_1 = require("./books.service");
 const sequelize_1 = require("@nestjs/sequelize");
 const book_model_1 = require("./book.model");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
+            config_1.ConfigModule.forRoot(),
             sequelize_1.SequelizeModule.forRoot({
                 dialect: 'mysql',
                 host: '172.17.0.2',
                 port: 3306,
-                username: 'root',
+                username: process.env.USER_DB,
                 password: '',
                 database: 'book_store',
                 autoLoadModels: true,

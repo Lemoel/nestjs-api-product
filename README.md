@@ -47,5 +47,5 @@ Possibilita que o sequelize utilize typescript - dependência apenas de desenvol
 
 # Instalar pacote para usar ENV
 
-Este pacote possibilita que utilizamos o arquivo .env com configurações de banco de dados <br/>
+Este pacote possibilita que utilizamos o arquivo `.env` com configurações de banco de dados <br/>
 `$ npm i --save @nestjs/config`

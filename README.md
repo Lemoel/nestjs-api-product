@@ -44,3 +44,8 @@ Foi utilizado a versão 5 por questões de compatibilidade
 
 Possibilita que o sequelize utilize typescript - dependência apenas de desenvolvimento
 `npm install --save-dev @types/sequelize`
+
+# Instalar pacote para usar ENV
+
+Este pacote possibilita que utilizamos o arquivo .env com configurações de banco de dados <br/>
+`$ npm i --save @nestjs/config`
